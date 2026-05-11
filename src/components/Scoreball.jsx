@@ -1,4 +1,5 @@
 import {motion} from "framer-motion";
+import { hapticTap } from "../utils/haptics";
 function ScoreBall({
   color,
   points,
@@ -18,7 +19,12 @@ function ScoreBall({
   transition={{
     duration: 0.2,
   }}
-      onClick={onClick}
+      onClick={() => {
+
+  hapticTap();
+
+  onClick();
+}}
 className={`
         relative rounded-full
         flex items-center justify-center
