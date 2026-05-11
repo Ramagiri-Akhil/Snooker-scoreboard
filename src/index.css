@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root{
+  --bg-primary:#031b11;
+  --bg-secondary:#06281b;
+
+  --text-primary:#06281b;
+  --text-secondary:rgb(255, 255, 255);
+
+  --card-bg:rgba(18, 30, 18, 0.982);
+
+  --glow-color:rgb(39, 100, 60);
+
+  --button-color:#facc15;
+
+  --input-placeholder:#8b8b8b;
+  --input-text:#ffffff;
+
+}
+
+.light{
+  --bg-primary:#06281b;
+  --bg-secondary:#e0e0e0;
+
+  --text-primary:#ffffff;
+  --text-secondary:#06281b;
+
+  --card-bg:rgba(255, 255, 255, 0.933);
+
+  --glow-color:rgba(129, 246, 174, 0.441);
+
+  --button-color:#06281b;
+
+   --input-placeholder:#6b7280;
+  --input-text:#000000;
+}
+
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: sans-serif;
+}
