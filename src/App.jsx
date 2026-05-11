@@ -17,6 +17,9 @@ const AnimatedRoutes = () => {
 
     <AnimatePresence mode="wait">
 
+      const location =
+  useLocation();
+
       <Routes
         location={location}
         key={location.pathname}
@@ -72,6 +75,14 @@ function App() {
 
   const [showIntro, setShowIntro] = useState(true);
 
+  const [installPrompt,
+  setInstallPrompt] =
+  useState(null);
+
+const [showInstall,
+  setShowInstall] =
+  useState(false);
+
     const location =
     useLocation();
 
@@ -81,6 +92,26 @@ function App() {
   const toggleTheme = () => {
     setDarkMode((prev) => !prev);
   };
+
+    const handleInstall =
+    async () => {
+
+      if (!installPrompt)
+        return;
+
+      installPrompt.prompt();
+
+      const choice =
+        await installPrompt.userChoice;
+
+      if (
+        choice.outcome ===
+        "accepted"
+      ) {
+
+        setShowInstall(false);
+      }
+    };
 
   useEffect(() => {
 
@@ -111,6 +142,33 @@ function App() {
 
 }, [darkMode]);
 
+useEffect(() => {
+
+  const handleInstallPrompt =
+    (e) => {
+
+      e.preventDefault();
+
+      setInstallPrompt(e);
+
+      setShowInstall(true);
+    };
+
+  window.addEventListener(
+    "beforeinstallprompt",
+    handleInstallPrompt
+  );
+
+  return () => {
+
+    window.removeEventListener(
+      "beforeinstallprompt",
+      handleInstallPrompt
+    );
+  };
+
+}, []);
+
   return (
 
     
@@ -134,6 +192,46 @@ function App() {
   )
 }
       <AnimatedRoutes />
+
+{
+  showInstall && (
+
+    <button
+
+      onClick={
+        handleInstall
+      }
+
+      className="
+        fixed
+        bottom-24
+        right-5
+        z-50
+
+        px-5 py-3
+        rounded-2xl
+
+        font-bold
+        shadow-2xl
+
+        animate-bounce
+      "
+
+      style={{
+        background:
+          "#facc15",
+
+        color:
+          "#000",
+      }}
+    >
+
+      Install App
+
+    </button>
+  )
+}
+
     </main>
   );
 }
