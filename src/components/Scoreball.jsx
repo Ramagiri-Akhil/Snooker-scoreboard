@@ -33,7 +33,7 @@ className={`
 
         ${
           small
-            ? "w-8 h-8 text-[10px]"
+            ? "w-5 h-5 text-[10px]"
             : "w-15 h-15 text-xl cursor-pointer hover:scale-105"
         }
       `}

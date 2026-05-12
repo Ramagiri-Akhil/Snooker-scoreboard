@@ -113,7 +113,7 @@ const isValid =
 
         {/* Title */}
         <h1
-          className="text-3xl md:text-4xl font-bold mb-2"
+          className="cinzel-400 text-xl md:text-3xl font-bold mb-2"
           style={{
             color: "var(--text-secondary)",
           }}
@@ -122,7 +122,7 @@ const isValid =
         </h1>
 
         <p
-          className="mt-1 mb-5 text-lg"
+          className="mt-1 mb-5 text-sm md:text-base"
           style={{
             color: "graytext",
           }}
@@ -131,7 +131,7 @@ const isValid =
         </p>
 
         {/* Teams Grid */}
-        <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-3">
           
           {/* TEAM A */}
           <div
@@ -142,7 +142,7 @@ const isValid =
             }}
           >
             {/* Team Header */}
-            <div className="flex  items-center gap-4 mb-6">
+            <div className="flex  items-center gap-2 mb-4">
               <FloatingBall
                 size="42px"
                 radius="50%"
@@ -187,7 +187,7 @@ const isValid =
                         e.target.value
                       )
                     }
-                    className="w-full px-4 py-3 rounded-2xl outline-none border placeholder:text-(--input-placeholder)]"
+                    className="w-full px-4 py-3 text-sm rounded-2xl outline-none border placeholder:text-(--input-placeholder)]"
                     style={{
                       background: "transparent",
                       borderColor: "var(--card-border)",
@@ -208,7 +208,7 @@ const isValid =
             }}
           >
             {/* Team Header */}
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-2 mb-4">
               <FloatingBall
                 size="42px"
                 radius="50%"
@@ -226,7 +226,7 @@ const isValid =
                     e.target.value
                   )
                 }
-                className="w-full px-4 py-3 rounded-2xl outline-none border placeholder:text-(--input-placeholder)]"
+                className="w-full px-4 py-3  rounded-2xl outline-none border placeholder:text-(--input-placeholder)]"
                 style={{
                   background: "transparent",
                   borderColor: "var(--card-border)",
@@ -253,7 +253,7 @@ const isValid =
                         e.target.value
                       )
                     }
-                    className="w-full px-4 py-3 rounded-2xl outline-none border placeholder:text-(--input-placeholder)]"
+                    className="w-full px-4 py-3 text-sm rounded-2xl outline-none border placeholder:text-(--input-placeholder)]"
                     style={{
                       background: "transparent",
                       borderColor: "var(--card-border)",
@@ -267,18 +267,18 @@ const isValid =
         </div>
 
         {/* Start Button */}
-        <div className="flex justify-end mt-10">
+        <div className="flex justify-end mt-5">
           <button
           disabled={!isValid}
           onClick={()=>{
             localStorage.setItem("snooker-match-type", "squad"); navigate("/Scoreboard")}}
-            className="disabled:opacity-40 disabled:cursor-not-allowed px-8 py-4 rounded-2xl text-lg font-bold cursor-pointer transition-all hover:scale-105"
+            className="disabled:opacity-40 disabled:cursor-not-allowed px-8 py-4 rounded-2xl text-sm font-bold cursor-pointer transition-all hover:scale-105"
             style={{
               background: "var(--button-color)",
               color: "var(--text-primary)",
             }}
           >
-            Start Match →
+            Start
           </button>
         </div>
       </div>

@@ -207,6 +207,7 @@ useEffect(() => {
         bottom-24
         right-5
         z-50
+        text-sm
 
         px-5 py-3
         rounded-2xl
@@ -215,6 +216,10 @@ useEffect(() => {
         shadow-2xl
 
         animate-bounce
+        hover:animate-none
+        transition-all duration-300
+        hover:scale-105
+        focus:outline-none
       "
 
       style={{
@@ -226,7 +231,7 @@ useEffect(() => {
       }}
     >
 
-      Install App
+      Install
 
     </button>
   )

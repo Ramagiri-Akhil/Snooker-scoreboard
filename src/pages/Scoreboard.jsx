@@ -674,9 +674,9 @@ addActivity(
       <div className="max-w-7xl mx-auto flex items-center justify-between mb-8">
         {/* Reds */}
         <div
-          className="text-sm md:text-xl font-bold "
+          className="text-xs md:text-xl font-bold "
           style={{
-            color: "var(--text-primary)",
+            color: "graytext",
           }}
         >
           REDS {gameState.reds}/15
@@ -689,7 +689,7 @@ addActivity(
             console.log("clicked");
             undoLastAction()
           }}
-            className="px-4 md:px-5 py-3 rounded-2xl font-semibold cursor-pointer"
+            className="px-4 md:px-5 py-3 text-xs rounded-2xl  cursor-pointer"
             style={{
               background: "var(--bg-secondary)",
               color: "var(--text-secondary)",
@@ -700,7 +700,7 @@ addActivity(
 
           <button
             onClick={resetGame}
-            className="px-4 md:px-5 py-3 rounded-2xl font-semibold cursor-pointer"
+            className="px-4 md:px-5 py-3 text-xs rounded-2xl  cursor-pointer"
             style={{
               background: "#ef4444",
               color: "#fff",
@@ -712,7 +712,7 @@ addActivity(
       </div>
 
       {/* MAIN */}
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-4">
         {/* LEFT SIDE */}
         <div className="space-y-5">
           {gameState.players.map((player, index) => {
@@ -739,16 +739,16 @@ addActivity(
 
                 <div className="flex items-center justify-between">
                   {/* LEFT */}
-                  <div className="flex items-center gap-5">
+                  <div className="flex items-center gap-3">
                     <FloatingBall
-                      size="43px"
+                      size="30px"
                       color={player.color}
                       animateBall={false}
                     />
 
                     <div>
                       <h2
-                        className="text-2xl md:text-3xl font-bold"
+                        className="cinzel-400 text-xl md:text-xl font-bold"
                         style={{
                           color: "var(--text-secondary)",
                         }}
@@ -766,7 +766,7 @@ addActivity(
                   </div>
 
                   {/* SCORE */}
-                  <h1 className="text-4xl md:text-5xl font-black text-yellow-400">
+                  <h1 className="text-2xl md:text-5xl text-yellow-400">
                       <AnimatedScore
     value={player.score}
   />
@@ -780,7 +780,7 @@ addActivity(
   gameState.reds === 0 &&
   !gameOver && (
 
-    <div className="mt-4">
+    <div className="mt-2">
 
       <p className="text-gray-500 text-sm mb-2 tracking-[2px]">
         NEXT REQUIRED BALL
@@ -843,7 +843,7 @@ addActivity(
         `}
       >
         <FloatingBall
-          size="20px"
+          size="15px"
           color="#ff1d25"
           animateBall={false}
         />
@@ -869,7 +869,7 @@ addActivity(
           <p className="tracking-[4px] text-gray-500">ON STRIKE</p>
 
           <h1
-            className="text-2xl md:text-5xl font-black mt-2"
+            className="cinzel-400 text-xl md:text-5xl  mt-2"
             style={{
               color: "var(--text-secondary)",
             }}
@@ -1061,7 +1061,7 @@ addActivity(
 </AnimatePresence>
 
           {/* BALLS */}
-          <div className="flex md:gap-5 gap-3 flex-wrap mt-4">
+          <div className="flex md:gap-5 gap-2 flex-wrap mt-2">
 {BALLS.map((ball) => {
 
   const isDisabled =
@@ -1105,7 +1105,7 @@ addActivity(
   py-4 rounded-2xl
   border-2 border-red-500
   text-red-500
-  font-bold md:text-2xl text-base
+   md:text-2xl text-base
   transition-all
 
   ${
@@ -1124,7 +1124,7 @@ addActivity(
               onClick={nextTurn}
              className={`
   py-4 rounded-2xl
-  text-white font-bold
+  text-white 
   md:text-2xl text-base
   transition-all
 
@@ -1153,7 +1153,7 @@ addActivity(
               }}
             >
               <p
-                className="text-lg font-bold mb-2"
+                className="text-sm  mb-2"
                 style={{
                   color: "var(--text-secondary)",
                 }}
@@ -1189,7 +1189,7 @@ addActivity(
                   onChange={(e) => setCustomPoints(e.target.value)}
                   placeholder="Custom"
                   className="
-                      flex-1 px-5 py-4
+                      flex-1 px-3 py-4 text-xs
                       rounded-2xl outline-none
                     "
                   style={{
@@ -1201,8 +1201,8 @@ addActivity(
                 <button
                   onClick={applyCustomPoints}
                   className="
-                      px-8 rounded-2xl
-                      font-bold cursor-pointer
+                      px-8 rounded-2xl text-xs
+                       cursor-pointer
                     "
                   style={{
                     background: "var(--button-color)",
@@ -1219,14 +1219,14 @@ addActivity(
         </div>
         {/* MATCH HISTORY */}
 <div
-  className="rounded-2xl p-3 mt-4"
+  className="rounded-2xl p-3 mt-2 md:mt-4"
   style={{
     background: "rgba(255,255,255,0.03)",
   }}
 >
 
   <p
-    className="text-lg font-bold mb-3"
+    className="text-sm  mb-3"
     style={{
       color: "var(--text-secondary)",
     }}
@@ -1238,7 +1238,7 @@ addActivity(
 
     {
       activityLog.length === 0 && (
-        <p className="text-gray-500 text-sm">
+        <p className="text-gray-500 text-xs">
           No activity yet
         </p>
       )
@@ -1276,7 +1276,7 @@ addActivity(
               />
 
               <p
-                className="font-medium"
+                className="text-sm"
                 style={{
                   color:
                     "var(--text-primary)",

@@ -180,7 +180,7 @@ const Navbar = ({
       <div
         className="
           md:hidden
-          fixed bottom-5 left-1/2
+          fixed bottom-2 left-1/2
           -translate-x-1/2
           z-50
           w-[92%]

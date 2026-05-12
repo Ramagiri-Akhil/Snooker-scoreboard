@@ -91,13 +91,13 @@ function Home() {
 
 
       {/* Content */}
-      <motion.section className="relative mb-12 z-10 min-h-screen flex flex-col items-center justify-center px-6"
+      <motion.section className="relative mb-8 z-10 min-h-screen flex flex-col items-center justify-center px-5"
       variants={containerVariants}
       initial="hidden"
         animate="show"
       >
         <motion.h1
-          className="text-5xl md:text-7xl font-black tracking-tight text-center"
+          className="cinzel-400 text-5xl md:text-7xl font-black tracking-tight text-center"
           variants={itemVariants}
           style={{
             color: "var(--text-primary)",
@@ -107,7 +107,7 @@ function Home() {
         </motion.h1>
 
         <motion.p
-          className="mt-3 mb-8 text-base md:text-lg text-center"
+          className="oswald-400 mt-2 mb-5 text-base md:text-lg text-center"
           variants={itemVariants}
           style={{
             color: "var(--text-primary)",
@@ -129,7 +129,7 @@ function Home() {
               damping: 14,
              }}
             onClick={() => navigate("/individual")}
-            className="min-h-60 rounded-3xl p-8 backdrop-blur-md border hover:cursor-pointer"
+            className="min-h-10 rounded-3xl p-5 backdrop-blur-md border hover:cursor-pointer"
             whileHover={{
               y: -8,
               scale: 1.03,
@@ -163,7 +163,7 @@ function Home() {
             </div>
 
             <h2
-              className="text-3xl md:text-5xl font-bold mb-2"
+              className="text-2xl md:text-4xl font-bold mb-2"
               style={{
                 color: "var(--text-secondary)",
               }}
@@ -193,7 +193,7 @@ function Home() {
           {/* Card 2 */}
           <motion.div
             onClick={() => navigate("/squad")}
-            className="w-full max-w-3xl min-h-60 rounded-3xl p-8 backdrop-blur-md border hover:cursor-pointer"
+            className="w-full max-w-3xl min-h-10 rounded-3xl p-5 backdrop-blur-md border hover:cursor-pointer"
              initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, 
@@ -226,7 +226,7 @@ function Home() {
             </div>
 
             <h2
-              className="text-3xl md:text-5xl font-bold mb-2"
+              className="text-2xl md:text-4xl font-bold mb-2"
               style={{
                 color: "var(--text-secondary)",
               }}

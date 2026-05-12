@@ -107,7 +107,7 @@ const isValid =
       >
         {/* Title */}
         <h1
-          className="text-3xl md:text-4xl font-bold mb-2"
+          className="cinzel-400 text-xl md:text-3xl font-bold mb-2"
           style={{
             color: "var(--text-secondary)",
           }}
@@ -116,7 +116,7 @@ const isValid =
         </h1>
 
         <p
-          className="mt-1 mb-6 text-lg"
+          className="mt-1 mb-5 text-sm md:text-base"
           style={{
             color: "graytext",
           }}
@@ -126,7 +126,7 @@ const isValid =
 
         {/* Player Count Buttons */}
        {/* Player Count Buttons */}
-<div className="mb-8 flex gap-3">
+<div className="mb-5 flex gap-3">
 
   {[2, 3, 4, 5].map(
     (count) => {
@@ -214,7 +214,7 @@ const isValid =
 </div>
 
         {/* Player Cards */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 gap-4">
           {players.map((player, index) => (
             <div
               key={index}
@@ -226,7 +226,7 @@ const isValid =
             >
               {/* Player Title */}
               <h2
-                className="text-2xl font-bold mb-5"
+                className="text-xl font-bold mb-4"
                 style={{
                   color: "graytext",
                 }}
@@ -242,7 +242,7 @@ const isValid =
                 onChange={(e) =>
                   handleNameChange(index, e.target.value)
                 }
-                className="w-full px-4 py-3 rounded-2xl outline-none border"
+                className="w-full text-sm px-4 py-3 rounded-2xl outline-none border"
                 style={{
           background: "var(--card-bg)",
           borderColor: "var(--card-border)",
@@ -251,7 +251,7 @@ const isValid =
               />
 
               {/* Color Selection */}
-              <div className="flex gap-3 mt-6 flex-wrap">
+              <div className="flex gap-3 mt-5 flex-wrap">
                 {COLORS.map((color) => {
                   const alreadyUsed = players.some(
                     (p, i) =>
@@ -288,19 +288,19 @@ const isValid =
         </div>
 
         {/* Start Button */}
-        <div className="flex justify-end mt-10">
+        <div className="flex justify-end mt-5">
           <button
           disabled={!isValid}
           onClick={()=>{
             localStorage.setItem("snooker-match-type", "individual");
             navigate('/Scoreboard')}}
-            className="disabled:opacity-40 disabled:cursor-not-allowed px-8 py-4 rounded-2xl text-lg font-bold cursor-pointer transition-all hover:scale-105"
+            className="disabled:opacity-40 disabled:cursor-not-allowed px-8 py-4 rounded-2xl text-sm font-bold cursor-pointer transition-all hover:scale-105"
             style={{
               background: "var(--button-color)",
               color: "#000",
             }}
           >
-            Start Game →
+            Start
           </button>
         </div>
       </div>
