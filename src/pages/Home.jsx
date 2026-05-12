@@ -91,7 +91,7 @@ function Home() {
 
 
       {/* Content */}
-      <motion.section className="relative mb-8 z-10 min-h-screen flex flex-col items-center justify-center px-5"
+      <motion.section className="relative mb-8 z-10 min-h-screen flex flex-col items-center justify-center px-5 overflow-hidden"
       variants={containerVariants}
       initial="hidden"
         animate="show"

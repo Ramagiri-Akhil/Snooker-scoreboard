@@ -33,8 +33,8 @@ className={`
 
         ${
           small
-            ? "w-5 h-5 text-[10px]"
-            : "w-15 h-15 text-xl cursor-pointer hover:scale-105"
+            ? "w-5 h-5 text-[5px]"
+            : "w-13 h-13 text-xl cursor-pointer hover:scale-105"
         }
       `}
       style={{

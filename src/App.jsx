@@ -169,12 +169,9 @@ useEffect(() => {
 
 }, []);
 
-  return (
-
-    
-  
+  return (  
     <main
-      className="min-h-screen relative overflow-hidden transition-all duration-500"
+      className="min-h-screen relative overflow-x-hidden overflow-y-hidden transition-all duration-500 pt-[env(safe-area-inset-top)]"
       style={{
         background: "var(--bg-primary)",
       }}

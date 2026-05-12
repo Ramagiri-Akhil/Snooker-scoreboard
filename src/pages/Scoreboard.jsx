@@ -671,7 +671,7 @@ addActivity(
 
 </AnimatePresence>
       {/* TOP BAR */}
-      <div className="max-w-7xl mx-auto flex items-center justify-between mb-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between mb-4">
         {/* Reds */}
         <div
           className="text-xs md:text-xl font-bold "
@@ -712,9 +712,9 @@ addActivity(
       </div>
 
       {/* MAIN */}
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-4">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-2 md:gap-4">
         {/* LEFT SIDE */}
-        <div className="space-y-5">
+        <div className="space-y-2">
           {gameState.players.map((player, index) => {
             const isActive = gameState.activePlayer === index;
 
@@ -724,7 +724,7 @@ addActivity(
                 onClick={()=>{
                     changeTurn(index)
                 }}
-                className="rounded-[30px] p-5 transition-all border-2 cursor-pointer hover:scale-[1.02]"
+                className="rounded-2xl p-5 transition-all border-2 cursor-pointer hover:scale-[1.02]"
                 style={{
                   background: "var(--bg-secondary)",
 
@@ -748,7 +748,7 @@ addActivity(
 
                     <div>
                       <h2
-                        className="cinzel-400 text-xl md:text-xl font-bold"
+                        className="cinzel-400 text-sm md:text-xl font-bold"
                         style={{
                           color: "var(--text-secondary)",
                         }}
@@ -766,7 +766,7 @@ addActivity(
                   </div>
 
                   {/* SCORE */}
-                  <h1 className="text-2xl md:text-5xl text-yellow-400">
+                  <h1 className="text-lg md:text-5xl text-yellow-400">
                       <AnimatedScore
     value={player.score}
   />
@@ -780,7 +780,7 @@ addActivity(
   gameState.reds === 0 &&
   !gameOver && (
 
-    <div className="mt-2">
+    <div className="mt-1 px-6">
 
       <p className="text-gray-500 text-sm mb-2 tracking-[2px]">
         NEXT REQUIRED BALL
@@ -814,7 +814,7 @@ addActivity(
 
           {/* REDS REMAINING */}
           <div
-            className="rounded-[30px] p-4 md:p-6"
+            className="rounded-2xl p-4 md:p-6"
             style={{
               background: "var(--bg-secondary)",
             }}
@@ -823,7 +823,7 @@ addActivity(
               REDS REMAINING
             </p>
 
-            <div className="flex gap-1 md:gap-3 flex-wrap px-2 p-2">
+            <div className="flex gap-1 md:gap-2 flex-wrap px-2 p-2">
               {Array.from({ length: 15 }).map(
   (_, index) => {
 
@@ -858,7 +858,7 @@ addActivity(
         {/* RIGHT SIDE */}
         <div
           className="rounded-3xl
-                        p-5 md:p-8
+                        p-4 md:p-8
                         w-full
                         overflow-hidden"
           style={{
@@ -869,7 +869,7 @@ addActivity(
           <p className="tracking-[4px] text-gray-500">ON STRIKE</p>
 
           <h1
-            className="cinzel-400 text-xl md:text-5xl  mt-2"
+            className="cinzel-400 text-lg md:text-5xl  mt-1"
             style={{
               color: "var(--text-secondary)",
             }}
@@ -946,7 +946,7 @@ addActivity(
             relative z-10
             w-full max-w-xl
             rounded-[40px]
-            p-8 md:p-12
+            p-6 md:p-12
             text-center
           "
 
@@ -979,7 +979,7 @@ addActivity(
 
             className="
               text-yellow-400
-              text-xl md:text-2xl
+              text-lg md:text-2xl
               font-bold tracking-[4px]
             "
           >
@@ -989,8 +989,8 @@ addActivity(
           {/* WINNER NAME */}
           <h1
             className="
-              text-4xl md:text-7xl
-              font-black mt-5
+              text-2xl md:text-7xl
+              font-black mt-2
             "
             style={{
               color:
@@ -1001,18 +1001,18 @@ addActivity(
           </h1>
 
           {/* SCORE */}
-          <p className="text-gray-400 mt-4 text-xl">
+          <p className="text-gray-400 mt-2 text-lg">
             {winner?.score} points
           </p>
 
           {/* BUTTONS */}
-          <div className="flex gap-5 justify-center mt-8 flex-wrap">
+          <div className="flex gap-5 justify-center mt-5 flex-wrap">
 
             {/* Restart */}
             <button
               onClick={resetGame}
               className="
-                px-5 py-3 rounded-2xl
+                px-4 py-3 rounded-2xl
                 font-bold cursor-pointer
                 transition-all hover:scale-105
               "
@@ -1147,7 +1147,7 @@ addActivity(
           {/* EXPANDABLE FOUL PANEL */}
           {showFoulPanel && (
             <div
-              className="rounded-2xl p-3 space-y-2 mt-4 "
+              className="rounded-2xl p-2 space-y-1 mt-4 "
               style={{
                 background: "rgba(255,255,255,0.03)",
               }}
@@ -1162,15 +1162,15 @@ addActivity(
               </p>
 
               {/* Foul Buttons */}
-              <div className="flex gap-3 flex-wrap">
+              <div className="flex gap-2 flex-wrap">
                 {[4, 5, 6, 7].map((foul) => (
                   <button
                     key={foul}
                     onClick={() => applyFoul(foul)}
                     className="
-                        w-10 h-10 rounded-full
+                        w-8 h-8 rounded-full
                         bg-red-600 text-white
-                         text-sm
+                         text-xs
                         cursor-pointer
                         hover:scale-105
                         transition-all
@@ -1182,14 +1182,14 @@ addActivity(
               </div>
 
               {/* CUSTOM APPLY */}
-              <div className="flex gap-3 mt-3">
+              <div className="flex gap-2 mt-3 justify-between">
                 <input
                   type="number"
                   value={customPoints}
                   onChange={(e) => setCustomPoints(e.target.value)}
                   placeholder="Custom"
                   className="
-                      flex-1 px-3 py-4 text-xs
+                      flex-1 px-2 py-3 text-xs
                       rounded-2xl outline-none
                     "
                   style={{
@@ -1201,7 +1201,7 @@ addActivity(
                 <button
                   onClick={applyCustomPoints}
                   className="
-                      px-8 rounded-2xl text-xs
+                      px-10 py-3 rounded-2xl text-xs
                        cursor-pointer
                     "
                   style={{

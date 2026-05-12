@@ -31,7 +31,7 @@ function FloatingBall({
             ? "absolute"
             : "relative"
         }
-        rounded-full z-10 shrink-0
+        rounded-full z-10 shrink-0 overflow-hidden
       `}
       style={{
         width: size,

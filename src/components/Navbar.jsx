@@ -38,7 +38,7 @@ const Navbar = ({
       <div
         className="
           hidden md:flex
-          fixed top-5 left-1/2
+          fixed top-[max(env(safe-area-inset-top),12px)] left-1/2
           -translate-x-1/2
           z-50
         "

@@ -2,6 +2,7 @@
 @import "tailwindcss";
 
 :root{
+  overflow: hidden;
   --bg-primary:#031b11;
   --bg-secondary:#06281b;
 
